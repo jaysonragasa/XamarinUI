@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinUI.MainPage"
+             
+             BindingContext="{Binding Source={StaticResource Locator}}"
+             xmlns:jio="clr-namespace:Jara.Xaml.Control.Extension;assembly=Jara.Xaml.ControlExtensions.Xamarin"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fft="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             >
+
+    <Grid>
+        <CollectionView ItemsSource="{Binding FriendsList.FriendsLists}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <!--margin doesn't work-->
+                    <!--<Grid Margin="20">-->
+                    <Grid jio:GridEx.ColumnDefinitions="~ * ~" HeightRequest="80">
+                        <Grid Grid.Column="0" Margin="20,0,0,0">
+                            <ff:CachedImage Source="{Binding ProfilePicture}" Aspect="AspectFit" WidthRequest="64">
+                                <ff:CachedImage.Transformations>
+                                    <fft:CircleTransformation />
+                                </ff:CachedImage.Transformations>
+                            </ff:CachedImage>
+                        </Grid>
+
+                        <StackLayout Grid.Column="1" Margin="10,0" VerticalOptions="Center">
+                            <Label Text="{Binding Nickname}" FontAttributes="Bold" FontSize="Large" />
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="&#xf012f;" FontFamily="materialfont" VerticalOptions="Center" IsVisible="{Binding IsOnline, Converter={StaticResource ReverseBoolean}}" />
+                                <Label Text="&#xf012f;" TextColor="Green" FontFamily="materialfont" VerticalOptions="Center" IsVisible="{Binding IsOnline}" />
+                                <Label Text="{Binding Mood}" VerticalOptions="Center" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <Grid Grid.Column="2" Margin="0,0,20,0" VerticalOptions="Center">
+                            <Label Text="&#xf0142;" FontFamily="materialfont" FontSize="Large" />
+                        </Grid>
+
+                        <Grid jio:GridEx.RowColumn="/0 3" BackgroundColor="#FF9E9E9E" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>
