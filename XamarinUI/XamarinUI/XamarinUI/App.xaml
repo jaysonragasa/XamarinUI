@@ -14,6 +14,67 @@
             <vm:ViewModelLocator x:Key="Locator" />
 
             <conv:Converter_ReverseBoolean x:Key="ReverseBoolean" />
+
+            <Style TargetType="Grid">
+                <Setter Property="ColumnSpacing" Value="0" />
+                <Setter Property="RowSpacing" Value="0" />
+            </Style>
+
+            <Color x:Key="ShellDefaultTitleColor">#FF2A2A2C</Color>
+            <Color x:Key="ShellDefaultUnselectedTitleColor">#3F2A2A2C</Color>
+
+            <Color x:Key="DefaultBackgroundColor">#FFEDEDED</Color>
+            <Color x:Key="DefaultThemeAccentColor">#FF26B5DF</Color>
+            <!--FF26B5DF-->
+            <Color x:Key="DefaultSwipeEditColor">#FF4FDF63</Color>
+            <Color x:Key="DefaultSwipeDeleteColor">#FFE94250</Color>
+
+            <Color x:Key="DefaultItemImagePlaceholderColor">#FF26B5DF</Color>
+
+            <!--#region toolbar style-->
+            <Color x:Key="DefaultToolbarBackgroundColor">#7FEDEDED</Color>
+            <Color x:Key="DefaultToolbarTextColor">#FF26B5DF</Color>
+            <x:Double x:Key="DefaultToolbarHeight">48</x:Double>
+            <x:Double x:Key="DefaultToolbarButtonSize">48</x:Double>
+            <x:Double x:Key="DefaultToolbarButtonFontSize">32</x:Double>
+            <Style TargetType="Grid" x:Key="Toolbar">
+                <Setter Property="BackgroundColor" Value="{StaticResource DefaultToolbarBackgroundColor}" />
+                <Setter Property="HeightRequest" Value="{StaticResource DefaultToolbarHeight}" />
+            </Style>
+            <Style TargetType="Label" x:Key="ToolbarButton">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HeightRequest" Value="{StaticResource DefaultToolbarButtonSize}" />
+                <Setter Property="WidthRequest" Value="{StaticResource DefaultToolbarButtonSize}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource DefaultThemeAccentColor}" />
+                <Setter Property="FontSize" Value="{StaticResource DefaultToolbarButtonFontSize}" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="FontFamily" Value="materialfonts" />
+            </Style>
+            <Style TargetType="Label" x:Key="ToolbarButtonText" BasedOn="{StaticResource ToolbarButton}">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HeightRequest" Value="{StaticResource DefaultToolbarButtonSize}" />
+                <Setter Property="WidthRequest" Value="{StaticResource DefaultToolbarButtonSize}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource DefaultThemeAccentColor}" />
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="Margin" Value="5" />
+            </Style>
+            <!--#endregion-->
+
+            <Style TargetType="Label" x:Key="Header">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="Margin" Value="0,20" />
+                <Setter Property="TextColor" Value="{StaticResource ShellDefaultTitleColor}" />
+            </Style>
+
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{StaticResource DefaultBackgroundColor}" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

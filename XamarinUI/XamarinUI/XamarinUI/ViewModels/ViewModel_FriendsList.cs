@@ -76,7 +76,7 @@ namespace XamarinUI.ViewModels
                     ProfilePicture = $"https://randomuser.me/api/portraits/{(_r.Next(0, 50) > 25 ? "men" : "women")}/{_r.Next(1, 8)}.jpg",
                     Nickname = nicknames[i],
                     IsOnline = _r.Next(0, 50) > 25 ? true : false,
-                    Mood = moods[_r.Next(1, 50)]
+                    Mood = moods[_r.Next(1, 49)]
                 });
             }
         }

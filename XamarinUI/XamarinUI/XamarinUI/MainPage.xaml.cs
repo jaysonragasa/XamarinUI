@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using Xamarin.Forms;
-using XamarinUI.ViewModels;
 
 namespace XamarinUI
 {
@@ -12,8 +11,6 @@ namespace XamarinUI
         public MainPage()
         {
             InitializeComponent();
-
-            ((ViewModelLocator)this.BindingContext).FriendsList.RefreshData();
         }
     }
 }
