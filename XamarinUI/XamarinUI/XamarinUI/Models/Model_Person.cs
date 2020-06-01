@@ -3,6 +3,9 @@ using System.Runtime.CompilerServices;
 
 namespace XamarinUI.Models
 {
+    /// <summary>
+    /// Model used in BasicMVVM
+    /// </summary>
     public class Model_Person : INotifyPropertyChanged
     {
         #region events

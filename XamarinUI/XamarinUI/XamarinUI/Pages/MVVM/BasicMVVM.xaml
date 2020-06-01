@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              x:Class="XamarinUI.Pages.BasicMVVM"
              
+             Title="Basic MVVM"
              Visual="Material"
              xmlns:jio="clr-namespace:Jara.Xaml.Control.Extension;assembly=Jara.Xaml.ControlExtensions.Xamarin"
              xmlns:vm="clr-namespace:XamarinUI.ViewModels"

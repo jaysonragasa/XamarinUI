@@ -42,10 +42,12 @@
                 Title="Main Page" 
                 ContentTemplate="{DataTemplate local:MainPage}" />
 
-        <ShellContent 
+        <Tab Title="MVVM">
+            <ShellContent 
                 Style="{StaticResource BaseStyle}" 
                 Title="Basic MVVM" 
                 ContentTemplate="{DataTemplate pages:BasicMVVM}" />
+        </Tab>
 
         <Tab Title="CollectionView">
             <ShellContent 
