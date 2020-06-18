@@ -15,7 +15,7 @@
 
 
     <Grid>
-        <CollectionView ItemsSource="{Binding FriendsList.FriendsLists}">
+        <CollectionView x:Name="cv" ItemsSource="{Binding FriendsList.FriendsLists}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <!--margin doesn't work-->

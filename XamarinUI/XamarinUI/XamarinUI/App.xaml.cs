@@ -1,4 +1,6 @@
 ﻿using Xamarin.Forms;
+using XamarinUI.Pages;
+using XamarinUI.Pages.Test;
 
 namespace XamarinUI
 {
@@ -8,7 +10,8 @@ namespace XamarinUI
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            //MainPage = new AppShell();
+            MainPage = new TestListView();
         }
 
         protected override void OnStart()

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinUI.Pages.Test.TestListView"
+             
+             xmlns:local="clr-namespace:XamarinUI.Pages.Test"
+             xmlns:jio="clr-namespace:Jara.Xaml.Control.Extension;assembly=Jara.Xaml.ControlExtensions.Xamarin"
+             >
+
+    <ContentPage.BindingContext>
+        <local:ViewModel_Test />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Grid jio:GridEx.RowDefinitions="~ ~ ~ *">
+            <Grid Grid.Row="0" HeightRequest="90" BackgroundColor="Red" />
+
+            <Grid Grid.Row="1" BackgroundColor="Green" HeightRequest="200" />
+
+            <Grid Grid.Row="2" BackgroundColor="Gray" HeightRequest="50" Padding="10" jio:GridEx.ColumnDefinitions="* *">
+                <Button Text="Populate" Command="{Binding Command_PopulateListview}" />
+
+                <Button Text="Clear" Command="{Binding Command_ClearListView}" Grid.Column="1" />
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid IsVisible="{Binding HideListView, Converter={StaticResource ReverseBoolean}}" jio:GridEx.RowDefinitions="* ~">
+                    <ListView ItemsSource="{Binding PersonCollection}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Label Text="{Binding Fullname}" FontSize="19" Margin="10,0" VerticalOptions="Center" />
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <Button Text="Place Order" HorizontalOptions="Center" Grid.Row="1" />
+                </Grid>
+
+                <Grid IsVisible="{Binding HideListView}" VerticalOptions="Start">
+                    <Button Text="Place Order" HorizontalOptions="Center"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
